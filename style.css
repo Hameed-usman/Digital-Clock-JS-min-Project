@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-size: 200% 200%;
+    animation: gradient-animation 10s ease infinite;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  @keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .clock {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.1);
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .time {
+    font-size: 70px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  .time span {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2), 0 0 15px rgba(255, 255, 255, 0.3);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .time span:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Digit Glow Animation */
+  @keyframes glow {
+    0%, 100% {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.2);
+    }
+  }
+  
+  #hr, #min, #sec {
+    animation: glow 1.5s infinite ease-in-out;
+  }
+  
+  /* Style Clock Border and Positioning */
+  .clock:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+    animation: border-glow 3s ease infinite;
+  }
+  
+  @keyframes border-glow {
+    0% { box-shadow: 0 0 50px rgba(255, 255, 255, 0.3); }
+    50% { box-shadow: 0 0 70px rgba(255, 255, 255, 0.5); }
+    100% { box-shadow: 0 0 50px rgba(255, 255, 255, 0.3); }
+  }
+  
+  
+  
